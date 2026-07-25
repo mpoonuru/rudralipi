@@ -14,7 +14,9 @@ Initial pre-alpha vertical release:
 - English, German, Italian, and Turkish localization;
 - browser save/reload playground and visual/accessibility regression suite;
 - optional defensive Gotenberg PDF adapter;
-- paged-document and long-table test fixtures.
+- paged-document and long-table test fixtures;
+- Bun-native workspace, verification, and continuous integration;
+- canonical modern Rudralipi logo.
 
 The schema, extension API, and renderer contracts remain unstable until a
 future stable release.

@@ -11,7 +11,7 @@ met.
 
 ## Delivered
 
-- Apache-2.0 Yarn workspace with strict TypeScript and package-boundary gates.
+- Apache-2.0 Bun workspace with strict TypeScript and package-boundary gates.
 - Versioned, runtime-validated document schema covering every built-in block.
 - Sequential migrations, block registry, immutable commands, transactions,
   bounded undo, and redo.
@@ -33,7 +33,7 @@ met.
 
 Every alpha candidate must pass:
 
-1. immutable Yarn installation;
+1. frozen Bun installation;
 2. formatting, lint, dependency-boundary, and strict type checks;
 3. package and repository tests;
 4. production builds;
@@ -45,7 +45,7 @@ Every alpha candidate must pass:
 Run the full local gate with:
 
 ```sh
-yarn verify:release
+bun run verify:release
 ```
 
 ## Next contract milestones

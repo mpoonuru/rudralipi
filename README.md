@@ -1,5 +1,7 @@
 # Rudralipi
 
+![Rudralipi](assets/brand/rudralipi-logo.png)
+
 Rudralipi (रुद्रलिपि, “Rudra’s script/writing”) is an open-source document
 composition and visual editing engine. It turns controlled, versioned document
 JSON into deterministic semantic HTML and print CSS, with an optional PDF
@@ -49,12 +51,12 @@ and [PDF guide](docs/guides/pdf-and-print.md).
 
 ## Run the playground
 
-Requirements are Node.js 22.12 or newer, Corepack, and Yarn 4.7.0.
+Requirements are Bun 1.3.14 or newer. Published headless packages continue to
+target Node.js 22.12 or newer for host-runtime portability.
 
 ```sh
-corepack enable
-yarn install --immutable
-yarn workspace @rudralipi/playground dev
+bun install --frozen-lockfile
+bun --filter @rudralipi/playground dev
 ```
 
 The playground persists only to browser storage and proves validation on
@@ -64,7 +66,7 @@ than copied from the editor DOM.
 ## Verify
 
 ```sh
-yarn verify:release
+bun run verify:release
 ```
 
 This runs formatting, lint, package-boundary checks, strict type checking,

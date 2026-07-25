@@ -7,6 +7,7 @@ their respective licenses and copyright notices.
 
 | Project                     | Purpose                            | License    |
 | --------------------------- | ---------------------------------- | ---------- |
+| Bun                         | Workspace tooling and test runtime | MIT        |
 | React                       | Optional editor view               | MIT        |
 | dnd-kit                     | Accessible drag and drop           | MIT        |
 | Tiptap open-source packages | Rich-text editing adapter          | MIT        |
@@ -24,7 +25,7 @@ their respective licenses and copyright notices.
 | ESLint                      | Static analysis                    | MIT        |
 | Prettier                    | Source formatting                  | MIT        |
 
-The exact versions are recorded in `yarn.lock`. No third-party source has been
+The exact versions are recorded in `bun.lock`. No third-party source has been
 adapted or copied into Rudralipi.
 
 Gotenberg is not bundled or linked into Rudralipi. The optional adapter talks to

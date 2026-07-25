@@ -33,7 +33,7 @@ export default defineConfig({
   },
   webServer: {
     command:
-      'corepack yarn workspace @rudralipi/playground dev --host 127.0.0.1 --port 42739 --strictPort',
+      'bun --filter @rudralipi/playground dev --host 127.0.0.1 --port 42739 --strictPort',
     reuseExistingServer: false,
     timeout: 120_000,
     url: 'http://127.0.0.1:42739',

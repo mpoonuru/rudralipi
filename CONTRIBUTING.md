@@ -5,14 +5,14 @@ product-independent architecture.
 
 ## Development rules
 
-- Use Yarn only.
+- Use Bun only.
 - Use Day.js for every date/time operation.
 - Use named ECMAScript imports and ESM-only packages.
 - Do not add `cn`, `cva`, arbitrary stored HTML, arbitrary stored CSS classes,
   executable templates, or paid editor extensions.
 - Keep headless packages free of React and browser dependencies.
 - Add a failing behavior test before implementation.
-- Run `yarn verify` before submitting a change.
+- Run `bun run verify` before submitting a change.
 - Do not include secrets, authenticated URLs, customer data, private assets, or
   unrelated product code in code, tests, fixtures, logs, or documentation.
 - Keep source, documentation, Git references, commit metadata, contribution
@@ -24,13 +24,12 @@ Contributions are submitted under the Apache License 2.0.
 ## Workspace workflow
 
 ```sh
-corepack enable
-yarn install --immutable
-yarn verify
+bun install --frozen-lockfile
+bun run verify
 ```
 
-Use `yarn workspace <package-name> test` for a focused test and
-`yarn verify:release` before a release-candidate pull request. Browser snapshots
+Use `bun --filter <package-name> test` for a focused test and
+`bun run verify:release` before a release-candidate pull request. Browser snapshots
 are reviewed artifacts: update them only when the visible change is intentional
 and explain the design impact in the pull request.
 

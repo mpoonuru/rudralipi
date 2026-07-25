@@ -80,7 +80,7 @@ early feedback surface, not a security or output authority.
 
 ## 3. Repository and Package Boundaries
 
-Rudralipi is a Yarn workspace monorepo using ECMAScript modules and strict
+Rudralipi is a Bun workspace monorepo using ECMAScript modules and strict
 TypeScript. Package exports define the supported public surface; internal files
 are not importable through package exports.
 

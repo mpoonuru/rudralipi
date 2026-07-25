@@ -23,9 +23,9 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc -b && node scripts/copy-styles.mjs",
+    "build": "tsc -b && bun scripts/copy-styles.mjs",
     "test": "vitest run",
-    "typecheck": "tsc -b && node scripts/copy-styles.mjs && tsc -p tsconfig.test.json"
+    "typecheck": "tsc -b && bun scripts/copy-styles.mjs && tsc -p tsconfig.test.json"
   },
   "dependencies": {
     "@dnd-kit/react": "0.5.0",
