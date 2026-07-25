@@ -10,6 +10,10 @@
     "directory": "packages/adapter-gotenberg"
   },
   "sideEffects": false,
+  "types": "./dist/index.d.ts",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -17,16 +21,22 @@
     }
   },
   "files": [
-    "dist"
+    "dist/**/*.d.ts",
+    "dist/**/*.js",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
   ],
   "scripts": {
     "build": "tsc -b",
+    "postpack": "bun ../../scripts/package-legal-files.mjs clean .",
+    "prepack": "bun ../../scripts/package-legal-files.mjs prepare .",
     "test": "vitest run",
     "typecheck": "tsc -b && tsc -p tsconfig.test.json"
   },
   "dependencies": {
-    "@rudralipi/core": "workspace:^",
-    "@rudralipi/renderer-html": "workspace:^"
+    "@rudralipi/core": "workspace:*",
+    "@rudralipi/renderer-html": "workspace:*"
   },
   "devDependencies": {
     "typescript": "6.0.3",

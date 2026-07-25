@@ -24,16 +24,18 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "bun run --filter '*' build",
+    "build": "bun scripts/build-workspace.mjs",
     "check:boundaries": "bun scripts/check-boundaries.mjs",
     "check:locales": "bun scripts/check-locales.mjs",
+    "check:package-artifacts": "bun scripts/check-package-artifacts.mjs",
+    "check:package-consumers": "bun scripts/check-package-consumers.mjs",
     "check:public-imports": "bun scripts/check-public-imports.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint .",
-    "test": "bun test scripts/*.test.mjs && bun run --parallel --filter '*' --if-present test",
+    "test": "bun test scripts/check-boundaries.test.mjs scripts/package-legal-files.test.mjs scripts/package-manifests.test.mjs && bun scripts/test-workspace.mjs",
     "typecheck": "bun run --filter '*' typecheck",
-    "verify": "bun run format:check && bun run lint && bun run check:boundaries && bun run typecheck && bun run test && bun run build",
+    "verify": "bun run format:check && bun run lint && bun run check:boundaries && bun run typecheck && bun run test && bun run build && bun run check:package-artifacts && bun run check:package-consumers",
     "verify:release": "bun ci && bun run verify && bun run check:public-imports && bun run check:locales"
   },
   "devDependencies": {

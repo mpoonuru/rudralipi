@@ -6,7 +6,7 @@
   "license": "Apache-2.0",
   "type": "module",
   "scripts": {
-    "build": "vite build",
+    "build": "bun ../../node_modules/vite/bin/vite.js build",
     "dev": "vite",
     "test": "vitest run",
     "typecheck": "tsc -b"

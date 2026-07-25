@@ -49,6 +49,27 @@ Read the maintained [architecture](docs/architecture/design.md), [integration
 guide](docs/guides/integration.md), [document model](docs/guides/document-model.md),
 and [PDF guide](docs/guides/pdf-and-print.md).
 
+## Install
+
+Public releases use one shared version across all packages. During alpha,
+install exact versions instead of ranges so schema, compiler, renderer, and
+editor contracts cannot drift independently:
+
+```sh
+bun add --exact @rudralipi/core@0.1.0-alpha.0
+bun add --exact @rudralipi/compiler@0.1.0-alpha.0
+bun add --exact @rudralipi/renderer-html@0.1.0-alpha.0
+```
+
+React hosts can add the editor separately:
+
+```sh
+bun add --exact @rudralipi/editor-react@0.1.0-alpha.0
+```
+
+The `alpha` distribution tag identifies the current pre-release line. Production
+integrations should continue to pin an explicit version and commit `bun.lock`.
+
 ## Run the playground
 
 Requirements are Bun 1.3.14 or newer. Published headless packages continue to
@@ -70,8 +91,9 @@ bun run verify:release
 ```
 
 This runs formatting, lint, package-boundary checks, strict type checking,
-tests, production builds, public headless-import checks, locale completeness,
-and Playwright browser/visual contracts.
+tests, production builds, clean package-archive inspection, isolated ESM and
+CommonJS consumer checks, React 19.1 compatibility, public headless-import
+checks, locale completeness, and Playwright browser/visual contracts.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for development rules,
 [SECURITY.md](SECURITY.md) for private vulnerability reporting, and the

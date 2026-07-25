@@ -28,6 +28,9 @@ met.
   endpoint controls.
 - Unit, integration, security, accessibility, browser, desktop/mobile visual,
   long-table, header/footer, and page-break fixtures.
+- Clean public package archives with exact internal alpha dependencies,
+  package-level documentation, legal notices, and isolated consumer proofs for
+  ESM, CommonJS dynamic import, and React 19.1.
 
 ## Alpha release gates
 
@@ -37,10 +40,11 @@ Every alpha candidate must pass:
 2. formatting, lint, dependency-boundary, and strict type checks;
 3. package and repository tests;
 4. production builds;
-5. public headless-import and localization completeness checks;
-6. browser edit/save/reload, localization, preview, accessibility, and visual
+5. clean package-archive and isolated host-consumer checks;
+6. public headless-import and localization completeness checks;
+7. browser edit/save/reload, localization, preview, accessibility, and visual
    regression tests;
-7. a clean worktree review with no generated build output or private material.
+8. a clean worktree review with no generated build output or private material.
 
 Run the full local gate with:
 
