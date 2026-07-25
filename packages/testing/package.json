@@ -1,0 +1,38 @@
+{
+  "name": "@rudralipi/testing",
+  "version": "0.1.0-alpha.0",
+  "description": "Canonical fixtures and reusable contract suites for Rudralipi integrations.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mpoonuru/rudralipi.git",
+    "directory": "packages/testing"
+  },
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "test": "vitest run",
+    "typecheck": "tsc -b && tsc -p tsconfig.test.json"
+  },
+  "dependencies": {
+    "@rudralipi/core": "workspace:^"
+  },
+  "devDependencies": {
+    "typescript": "6.0.3",
+    "vitest": "4.1.10"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

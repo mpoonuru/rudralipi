@@ -1,0 +1,57 @@
+{
+  "name": "@rudralipi/rich-text-tiptap",
+  "version": "0.1.0-alpha.0",
+  "description": "A replaceable Tiptap adapter for Rudralipi's owned rich-text AST.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mpoonuru/rudralipi.git",
+    "directory": "packages/rich-text-tiptap"
+  },
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "test": "vitest run",
+    "typecheck": "tsc -b && tsc -p tsconfig.test.json"
+  },
+  "dependencies": {
+    "@floating-ui/dom": "1.8.0",
+    "@rudralipi/core": "workspace:^",
+    "@tiptap/core": "3.29.0",
+    "@tiptap/extension-subscript": "3.29.0",
+    "@tiptap/extension-superscript": "3.29.0",
+    "@tiptap/pm": "3.29.0",
+    "@tiptap/react": "3.29.0",
+    "@tiptap/starter-kit": "3.29.0"
+  },
+  "peerDependencies": {
+    "react": ">=19.2.0",
+    "react-dom": ">=19.2.0"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "10.4.1",
+    "@testing-library/jest-dom": "7.0.0",
+    "@testing-library/react": "16.3.2",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "jsdom": "29.1.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "typescript": "6.0.3",
+    "vitest": "4.1.10"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

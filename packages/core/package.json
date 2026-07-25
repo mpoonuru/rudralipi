@@ -1,0 +1,42 @@
+{
+  "name": "@rudralipi/core",
+  "version": "0.1.0-alpha.0",
+  "description": "Portable schemas, commands, migrations, and extension contracts for Rudralipi.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mpoonuru/rudralipi.git",
+    "directory": "packages/core"
+  },
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "test": "vitest run",
+    "typecheck": "tsc -b && tsc -p tsconfig.test.json"
+  },
+  "dependencies": {
+    "dayjs": "1.11.21",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "typescript": "6.0.3",
+    "vitest": "4.1.10"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

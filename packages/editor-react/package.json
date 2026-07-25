@@ -1,0 +1,58 @@
+{
+  "name": "@rudralipi/editor-react",
+  "version": "0.1.0-alpha.0",
+  "description": "Controlled, accessible React editing surfaces for Rudralipi documents.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mpoonuru/rudralipi.git",
+    "directory": "packages/editor-react"
+  },
+  "sideEffects": [
+    "./dist/styles.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b && node scripts/copy-styles.mjs",
+    "test": "vitest run",
+    "typecheck": "tsc -b && node scripts/copy-styles.mjs && tsc -p tsconfig.test.json"
+  },
+  "dependencies": {
+    "@dnd-kit/react": "0.5.0",
+    "@rudralipi/core": "workspace:^",
+    "@rudralipi/localization": "workspace:^",
+    "@rudralipi/rich-text-tiptap": "workspace:^",
+    "zustand": "5.0.14"
+  },
+  "peerDependencies": {
+    "react": ">=19.2.0",
+    "react-dom": ">=19.2.0"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "10.4.1",
+    "@testing-library/jest-dom": "7.0.0",
+    "@testing-library/react": "16.3.2",
+    "@testing-library/user-event": "14.6.1",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "jsdom": "29.1.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "typescript": "6.0.3",
+    "vitest": "4.1.10"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

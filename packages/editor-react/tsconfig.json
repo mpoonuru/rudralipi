@@ -1,0 +1,23 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "outDir": "dist",
+    "rootDir": "src",
+    "tsBuildInfoFile": "dist/editor-react.tsbuildinfo"
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["src/**/*.test.ts", "src/**/*.test.tsx"],
+  "references": [
+    {
+      "path": "../core"
+    },
+    {
+      "path": "../localization"
+    },
+    {
+      "path": "../rich-text-tiptap"
+    }
+  ]
+}

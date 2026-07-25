@@ -1,0 +1,39 @@
+{
+  "name": "@rudralipi/adapter-gotenberg",
+  "version": "0.1.0-alpha.0",
+  "description": "A defensive Gotenberg PDF adapter for deterministic Rudralipi HTML.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mpoonuru/rudralipi.git",
+    "directory": "packages/adapter-gotenberg"
+  },
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "test": "vitest run",
+    "typecheck": "tsc -b && tsc -p tsconfig.test.json"
+  },
+  "dependencies": {
+    "@rudralipi/core": "workspace:^",
+    "@rudralipi/renderer-html": "workspace:^"
+  },
+  "devDependencies": {
+    "typescript": "6.0.3",
+    "vitest": "4.1.10"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

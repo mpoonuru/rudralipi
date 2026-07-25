@@ -1,0 +1,46 @@
+{
+  "name": "rudralipi",
+  "version": "0.1.0-alpha.0",
+  "private": true,
+  "description": "A product-independent document composition and visual editing engine.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mpoonuru/rudralipi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mpoonuru/rudralipi/issues"
+  },
+  "homepage": "https://github.com/mpoonuru/rudralipi#readme",
+  "packageManager": "yarn@4.7.0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "workspaces": [
+    "apps/*",
+    "examples/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "yarn workspaces foreach --all --topological-dev run build",
+    "check:boundaries": "node scripts/check-boundaries.mjs",
+    "check:locales": "node scripts/check-locales.mjs",
+    "check:public-imports": "node scripts/check-public-imports.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "test": "node --test scripts/*.test.mjs && yarn workspaces foreach --all --parallel run test",
+    "typecheck": "yarn workspaces foreach --all --topological-dev run typecheck",
+    "verify": "yarn format:check && yarn lint && yarn check:boundaries && yarn typecheck && yarn test && yarn build",
+    "verify:release": "yarn install --immutable && yarn verify && yarn check:public-imports && yarn check:locales"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "eslint": "10.8.0",
+    "prettier": "3.9.6",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.65.0",
+    "vitest": "4.1.10"
+  }
+}
